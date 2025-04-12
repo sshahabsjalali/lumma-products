@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumma Products</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .product-section {
+            position: relative;
+            width: 100%;
+            padding: 120px 25px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .product-section:nth-child(odd) {
+            background-color: #003366;
+        }
+
+        .product-section:nth-child(even) {
+            background-color: #f9f9f9;
+            color: #003366;
+        }
+
+        .product-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+
+        .product-section:nth-child(odd) .product-text {
+            order: 2;
+        }
+
+        .product-text {
+            flex: 1;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s ease;
+        }
+
+        .product-section:nth-child(even) .product-text {
+            order: 1;
+            transform: translateX(50px);
+        }
+
+        .product-section.show .product-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .product-image {
+            flex: 1;
+            height: 320px;
+            background-size: 92%;
+            background-position: center;
+            border-radius: 10px;
+            width: 50px;
+        }
+
+        .slider-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            opacity: 0.08;
+            overflow: hidden;
+        }
+
+        .slider-bg img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .product-section:nth-child(odd) .download-btn {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .product-section:nth-child(odd) .download-btn:hover {
+            background-color: #fff;
+            color: #003366;
+        }
+
+        .product-section:nth-child(even) .download-btn {
+            border-color: #003366;
+            color: #003366;
+        }
+
+        .product-section:nth-child(even) .download-btn:hover {
+            background-color: #003366;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .product-content {
+                flex-direction: column;
+            }
+
+            .product-text, .product-image {
+                order: unset !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Product 1: UV Ink -->
+<section class="product-section" id="uv-ink">
+    <div class="slider-bg">
+        <img src="https://cdn.cloudbf.com/thumb/format/mini_xsize/upfile/148/product_o/Digital-Large-Format-Flatbed-UV-Printer-UV2513.jpg.webp" alt="UV printer sample 1">
+        <img src="https://aftermarket.co.za/wp-content/uploads/2023/03/lp-657-0511.jpg" alt="UV printer sample 2">
+        <img src="https://iqrnrwxhrnpk5q.leadongcdn.com/cloud/joBqrKjnSRrmlmipmoj/M5000.jpg" alt="UV printer sample 3">
+    </div>
+    <div class="product-content">
+        <div class="product-text">
+            <h2>UV Ink</h2>
+            <p>Our UV-curable inks are engineered for high-speed, high-resolution digital printing. Compatible with a wide range of rigid and flexible substrates, they deliver vibrant colors, sharp detail, and excellent adhesion. Designed for long-term outdoor durability, quick curing under UV lamps, and low odor operation, our UV inks help your business achieve consistent results in industrial and commercial printing applications.</p>
+            <a class="download-btn" href="datasheets/uv-ink.pdf" target="_blank">Download Datasheet</a>
+        </div>
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/3774ab46f5d4459f9b1a519fcec6279c.jpg');" alt="UV Ink Bottle"></div>
+    </div>
+</section>
+
+<!-- Product 2: Sublimation High Density -->
+<section class="product-section" id="sublimation-hd">
+    <div class="slider-bg">
+        <img src="https://cdn.machineseeker.com/data/listing/img/vga/ms/61/67/18811386-01.jpg?v=1743001512" alt="Sublimation printer HD 1">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/365074266/NA/AZ/MG/105416556/sawgrass-sublimation-ink-500x500.jpg" alt="Sublimation ink bottle HD">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JV/KS/AY/8288112/sublimation-textile-printer-16-heads.jpg" alt="Sublimation printer HD 2">
+    </div>
+    <div class="product-content">
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/00d2bf8172bb4f159f6c6af190fa8f37.jpg');" alt="High Density Ink Bottle"></div>
+        <div class="product-text">
+            <h2>Sublimation High Density Ink</h2>
+            <p>Specially formulated for intense color transfer and rich saturation, our High-Density sublimation inks are perfect for textile and soft signage applications. With higher pigment loads and deep blacks, these inks produce outstanding detail and vibrancy even on thick or coated sublimation papers. Ideal for fashion, sportswear, and premium fabrics requiring punchy, long-lasting color.</p>
+            <a class="download-btn" href="datasheets/sublimation-hd.pdf" target="_blank">Download Datasheet</a>
+        </div>
+    </div>
+</section>
+<!-- Product 3:Economy Sublimation -->
+<section class="product-section" id="sublimation-eco">
+    <div class="slider-bg">
+        <img src="https://cdn.cloudbf.com/thumb/format/mini_xsize/upfile/148/product_o/Digital-Large-Format-Flatbed-UV-Printer-UV2513.jpg.webp" alt="UV printer sample 1">
+        <img src="https://aftermarket.co.za/wp-content/uploads/2023/03/lp-657-0511.jpg" alt="UV printer sample 2">
+        <img src="https://iqrnrwxhrnpk5q.leadongcdn.com/cloud/joBqrKjnSRrmlmipmoj/M5000.jpg" alt="UV printer sample 3">
+    </div>
+    <div class="product-content">
+        <div class="product-text">
+            <h2>Economy Sublimation Ink</h2>
+                <p>Our economy-grade sublimation ink offers reliable quality and consistent color at an affordable price. Suitable for entry-level and mid-range printers, it’s perfect for everyday textile applications with cost-efficiency in mind.</p>
+            <a class="download-btn" href="datasheets/uv-ink.pdf" target="_blank">Download Datasheet</a>
+        </div>
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/9b6383ad5f354758a83a5bc5abef0e73.jpeg');" alt="UV Ink Bottle"></div>
+    </div>
+</section>
+
+<!-- Product 4: Eco Solvent -->
+<section class="product-section" id="eco-solvent">
+    <div class="slider-bg">
+        <img src="https://cdn.machineseeker.com/data/listing/img/vga/ms/61/67/18811386-01.jpg?v=1743001512" alt="Sublimation printer HD 1">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/365074266/NA/AZ/MG/105416556/sawgrass-sublimation-ink-500x500.jpg" alt="Sublimation ink bottle HD">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JV/KS/AY/8288112/sublimation-textile-printer-16-heads.jpg" alt="Sublimation printer HD 2">
+    </div>
+    <div class="product-content">
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/38d033b1ba17458e81ce13ae9c181199.jpg');" alt="High Density Ink Bottle"></div>
+        <div class="product-text">
+            <h2>Eco-Solvent Ink</h2>
+            <p>Our Eco-Solvent Ink is designed for professional indoor and outdoor printing on vinyl, banners, canvas, and coated media. It features low-odor, eco-friendly solvents that produce sharp, vivid, and water-resistant graphics. Compatible with most DX4, DX5, and XP600 printheads, the ink ensures minimal maintenance and excellent jetting stability. It delivers high-density colors and smooth gradients. Ideal for advertising, signage, and graphic installations, Lumma’s eco-solvent formula dries fast and adheres strongly to various surfaces. The ink resists fading and scratching, ensuring long-term durability even in harsh environments. It is packaged in convenient 1L bottles..</p>
+            <a class="download-btn" href="datasheets/sublimation-hd.pdf" target="_blank">Download Datasheet</a>
+        </div>
+    </div>
+</section>
+<!-- Product 5: Solvent -->
+<section class="product-section" id="solvent-ink">
+    <div class="slider-bg">
+        <img src="https://cdn.cloudbf.com/thumb/format/mini_xsize/upfile/148/product_o/Digital-Large-Format-Flatbed-UV-Printer-UV2513.jpg.webp" alt="UV printer sample 1">
+        <img src="https://aftermarket.co.za/wp-content/uploads/2023/03/lp-657-0511.jpg" alt="UV printer sample 2">
+        <img src="https://iqrnrwxhrnpk5q.leadongcdn.com/cloud/joBqrKjnSRrmlmipmoj/M5000.jpg" alt="UV printer sample 3">
+    </div>
+    <div class="product-content">
+        <div class="product-text">
+            <h2>Solvent Ink</h2>
+            <p>Developed for high-performance printing on uncoated and coated substrates, our Solvent Ink provides long-lasting outdoor durability and chemical resistance. It offers rich blacks, vibrant hues, and excellent adhesion on PVC, mesh, vinyl, and other materials. This ink is trusted by signage and billboard producers for its cost-efficiency and weather resistance. Its superior drying properties support high-speed production with minimal downtime. Lumma’s solvent ink minimizes clogging and offers extended printer head life. Ideal for industrial-scale printers using Spectra, Konica, or Seiko heads. Available in 1L and 5L sizes..</p>
+            <a class="download-btn" href="datasheets/uv-ink.pdf" target="_blank">Download Datasheet</a>
+        </div>
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/bf05cd08373b4ef4acc208414b06c722.jpg');" alt="UV Ink Bottle"></div>
+    </div>
+</section>
+
+<!-- Product 6: Disperse Textile -->
+<section class="product-section" id="disperse-textile">
+    <div class="slider-bg">
+        <img src="https://cdn.machineseeker.com/data/listing/img/vga/ms/61/67/18811386-01.jpg?v=1743001512" alt="Sublimation printer HD 1">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/365074266/NA/AZ/MG/105416556/sawgrass-sublimation-ink-500x500.jpg" alt="Sublimation ink bottle HD">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JV/KS/AY/8288112/sublimation-textile-printer-16-heads.jpg" alt="Sublimation printer HD 2">
+    </div>
+    <div class="product-content">
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/3d30b44f7ff4463bbdad2f2a8340ff04.jpg');" alt="High Density Ink Bottle"></div>
+        <div class="product-text">
+            <h2>Disperse Textile Ink</h2>
+            <p>Our Disperse Ink for direct-to-fabric printing offers excellent color depth and penetration on polyester and blended textiles. Ideal for sportswear, flags, and home textiles, it ensures strong lightfastness and wash durability. The ink dries quickly and supports high-speed printing. Suitable for direct printing without transfer paper, reducing time and cost. It is optimized for Kyocera, Epson, and Ricoh printheads. Available in multiple packaging sizes for flexible operations from small studios to large factories. Lumma’s strict QC ensures color consistency and nozzle compatibility across production batches.</p>
+            <a class="download-btn" href="datasheets/sublimation-hd.pdf" target="_blank">Download Datasheet</a>
+        </div>
+    </div>
+</section>
+<!-- Product 7: Disperse Rug&Carpet -->
+<section class="product-section" id="Disperse-carpet">
+    <div class="slider-bg">
+        <img src="https://cdn.cloudbf.com/thumb/format/mini_xsize/upfile/148/product_o/Digital-Large-Format-Flatbed-UV-Printer-UV2513.jpg.webp" alt="UV printer sample 1">
+        <img src="https://aftermarket.co.za/wp-content/uploads/2023/03/lp-657-0511.jpg" alt="UV printer sample 2">
+        <img src="https://iqrnrwxhrnpk5q.leadongcdn.com/cloud/joBqrKjnSRrmlmipmoj/M5000.jpg" alt="UV printer sample 3">
+    </div>
+    <div class="product-content">
+        <div class="product-text">
+            <h2>Disperse Rug&Carpet Ink</h2>
+            <p>Specially formulated for direct printing on carpets and rugs, this Disperse Ink delivers deep penetration and bold color saturation. It withstands heavy wear and repeated cleaning, making it ideal for commercial and residential carpeting. The formulation supports heavy-duty printing machines and industrial lines. High pigment concentration ensures long-term color vibrancy. This ink offers high resistance to abrasion, fading, and chemicals. Compatible with large-scale printing heads like Konica and Ricoh. Supplied in 20L and 200L drums for mass production environments.</p>
+            <a class="download-btn" href="datasheets/uv-ink.pdf" target="_blank">Download Datasheet</a>
+        </div>
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/9babeb4817c54865a29ae3be1d4c5784.jpeg');" alt="UV Ink Bottle"></div>
+    </div>
+</section>
+
+<!-- Product 8: DTG -->
+<section class="product-section" id="dtg">
+    <div class="slider-bg">
+        <img src="https://cdn.machineseeker.com/data/listing/img/vga/ms/61/67/18811386-01.jpg?v=1743001512" alt="Sublimation printer HD 1">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/365074266/NA/AZ/MG/105416556/sawgrass-sublimation-ink-500x500.jpg" alt="Sublimation ink bottle HD">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JV/KS/AY/8288112/sublimation-textile-printer-16-heads.jpg" alt="Sublimation printer HD 2">
+    </div>
+    <div class="product-content">
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/32e2fb2286f1417b8ac28b5acc1770de.jpg');" alt="High Density Ink Bottle"></div>
+        <div class="product-text">
+            <h2>DTG-Direct To Garment</h2>
+            <p>Our DTG Ink is ideal for printing directly onto cotton garments using Epson-based DTG printers. It delivers rich, vibrant colors and deep black tones with superior fabric penetration. The ink is water-based and skin-safe, suitable for children’s wear and sensitive skin. It provides soft-hand feel and durability against washing and wear. Lumma’s DTG ink is compatible with both CMYK and white ink channels and dries quickly under heat press. Easy to maintain and clean, it supports consistent production output. Packaged in 1-liter bottles for studio or commercial use..</p>
+            <a class="download-btn" href="datasheets/sublimation-hd.pdf" target="_blank">Download Datasheet</a>
+        </div>
+    </div>
+</section>
+<!-- Product 9: DTF -->
+<section class="product-section" id="DTF">
+    <div class="slider-bg">
+        <img src="https://cdn.cloudbf.com/thumb/format/mini_xsize/upfile/148/product_o/Digital-Large-Format-Flatbed-UV-Printer-UV2513.jpg.webp" alt="UV printer sample 1">
+        <img src="https://aftermarket.co.za/wp-content/uploads/2023/03/lp-657-0511.jpg" alt="UV printer sample 2">
+        <img src="https://iqrnrwxhrnpk5q.leadongcdn.com/cloud/joBqrKjnSRrmlmipmoj/M5000.jpg" alt="UV printer sample 3">
+    </div>
+    <div class="product-content">
+        <div class="product-text">
+            <h2>DTF- Direct To Film Ink</h2>
+            <p>Our DTF Ink is specially crafted for transfer printing onto various fabrics including cotton, polyester, and blends. It produces vibrant colors, deep blacks, and strong adhesion to DTF films. This ink is engineered to work seamlessly with white ink underlayers, enhancing color brilliance and wash durability. Lumma’s DTF ink offers excellent drying speed and consistent flow without clogging. Compatible with major DTF printers and powder systems. The prints are flexible, crack-resistant, and soft to the touch. Ideal for fashion, promotional wear, and custom apparel. Supplied in 1L bottles for ease of use.</p>
+            <a class="download-btn" href="datasheets/uv-ink.pdf" target="_blank">Download Datasheet</a>
+        </div>
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/068eac6e0710451ab64b2a7e351c0dc4.jpg');" alt="UV Ink Bottle"></div>
+    </div>
+</section>
+
+<!-- Product 10: Sublimation Paper -->
+<section class="product-section" id="sublimation paper">
+    <div class="slider-bg">
+        <img src="https://cdn.machineseeker.com/data/listing/img/vga/ms/61/67/18811386-01.jpg?v=1743001512" alt="Sublimation printer HD 1">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/365074266/NA/AZ/MG/105416556/sawgrass-sublimation-ink-500x500.jpg" alt="Sublimation ink bottle HD">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JV/KS/AY/8288112/sublimation-textile-printer-16-heads.jpg" alt="Sublimation printer HD 2">
+    </div>
+    <div class="product-content">
+        <div class="product-image" style="background-image: url('https://lummainksco.com/uploads/0e02ea38e49047e281a3f31e8938a61d.jpeg');" alt="High Density Ink Bottle"></div>
+        <div class="product-text">
+            <h2>Sublimation Paper</h2>
+            <p>Lumma’s sublimation transfer paper is engineered for sharp, clean transfers with minimal ink spread. It offers high transfer rates and works with all sublimation inks. Designed for textile and hard substrate applications like ceramics and aluminum. It handles high-speed printing with smooth feeding and low curling. Available in various widths to accommodate all printer formats. Packaged securely in cardboard tubes for protection during transport and storage. Compatible with roll-to-roll systems in industrial settings.</p>
+            <a class="download-btn" href="datasheets/sublimation-hd.pdf" target="_blank">Download Datasheet</a>
+        </div>
+    </div>
+</section>
+<!-- Product 11: dtf film -->
+<section class="product-section" id="dtf film">
+    <div class="slider-bg">
+        <img src="https://cdn.cloudbf.com/thumb/format/mini_xsize/upfile/148/product_o/Digital-Large-Format-Flatbed-UV-Printer-UV2513.jpg.webp" alt="UV printer sample 1">
+        <img src="https://aftermarket.co.za/wp-content/uploads/2023/03/lp-657-0511.jpg" alt="UV printer sample 2">
+        <img src="https://iqrnrwxhrnpk5q.leadongcdn.com/cloud/joBqrKjnSRrmlmipmoj/M5000.jpg" alt="UV printer sample 3">
+    </div>
+    <div class="product-content">
+        <div class="product-text">
+            <h2>DTF Film</h2>
+            <p>Our Double Matte DTF film is the perfect medium for sharp, vibrant image transfers with smooth ink absorption and even powder adhesion. It provides excellent release properties and anti-static surface for high transfer accuracy. The matte coating reduces glare and offers professional print results. Suitable for both hot and cold peel processes. The film remains stable under high temperatures and offers consistent performance across batches. Ideal for high-quality apparel production.</p>
+            <a class="download-btn" href="datasheets/uv-ink.pdf" target="_blank">Download Datasheet</a>
+        </div>
+        <div class="product-image" style="background-image: url('https://lummainksco.com/images/dtf-film.jpg');" alt="dtf film roll"></div>
+    </div>
+</section>
+
+<script>
+    // انیمیشن نمایش متن‌ها
+    const productSections = document.querySelectorAll('.product-section');
+
+    const productObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    productSections.forEach(section => {
+        productObserver.observe(section);
+    });
+
+    // اسلاید بک‌گراند برای هر بخش
+    productSections.forEach(section => {
+        const images = section.querySelectorAll('.slider-bg img');
+        let index = 0;
+
+        if (images.length > 0) {
+            images[0].style.opacity = 1;
+
+            setInterval(() => {
+                images[index].style.opacity = 0;
+                index = (index + 1) % images.length;
+                images[index].style.opacity = 1;
+            }, 4000);
+        }
+    });
+</script>
+
+</body>
+</html>
